@@ -1,5 +1,6 @@
 USERBOT vk-video
 ========
+![текст](https://sun9-17.userapi.com/impf/SPK7kYWB2FQum7KnNj6TnOZYlSEXTkEKETARGw/4tce2zj0-N8.jpg?size=1500x500&quality=96&sign=867574fff1d8dc605726ce3f03f3158d&type=album)
 - отправь сообщение `/no`, оно автоматически изменится на видео, где ben говорит `no`
 - все команды ты можешь найти в группе вк [vk-video](https://vk.com/public212708924 "сообщество ВК"), так же там ты можешь предложить свою комманду и видео
 
