@@ -6,7 +6,7 @@ USERBOT vk-video
 ## установка:
 -     apt install git
 -     git clone https://github.com/HANTER-NA-CODE/vk-video
--     cd Vkstatus
+-     cd vk-video
 -     bash install
 
 ## настройка:
