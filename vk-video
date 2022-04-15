@@ -49,8 +49,9 @@ menu2() {
                     printf "\n"
 
                     if [[ $pok == 'да' ]]; then
-                        cd
+                        rm -rf /data/data/com.termux/files/usr/bin/vk-video
                         rm -rf /data/data/com.termux/files/home/vk-video
+                        cd
                     elif [[ $pok == 'нет' ]]; then
                         menu2
                     else
