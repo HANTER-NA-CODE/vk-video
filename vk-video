@@ -1,0 +1,121 @@
+#!/bin/bash
+
+banner() {
+    clear
+    printf "\e[1;94m        _             \e[1;95m         _      _              \n"
+    printf "\e[1;94m       | | __         \e[1;95m        (_)    | |             \n"
+    printf "\e[1;94m  __   |__/ /         \e[1;95m__    __ _  ___| | ____  ____  \n"
+    printf "\e[1;94m  \ \  / / /   _____  \e[1;95m\ \  / /| |/ __  |/ __ \/    \ \n"
+    printf "\e[1;94m   \ \/ /  \  |\e[1;95m_____|  \ \/ / | | (__| |  ___/  () | \n"
+    printf "\e[1;94m    \__/_|\_\         \e[1;95m  \__/  |_|\___._|\____|\____/ \n"                                                                                                                                                                                                                                                                                    
+    printf "\e[0m\n"
+}
+
+token=/data/data/com.termux/files/home/vk-video/token.txt
+
+vhod() {
+    printf "\e[1;93m  получить \e[1;96maccess token\n"
+    printf "\e[1;93m  можно по ссылке \e[1;96mhttps://vkhost.github.io\n"
+    printf "\e[1;93m  нужные параметры \e[1;96mсообщения\e[1;93m и \e[1;96mдоступ в любое время\n"
+    printf "\e[1;91m  при смене пароля вк, токен нужно менять\n\n"
+    printf "\e[1;91m  [\e[0m0\e[1;91m]\e[1;93m для отмены\n\n"
+
+    read -p $'\e[1;92mtoken: \e[0m\e[1;96m' pok
+    if [[ $pok == 0 ]]; then
+        echo 
+    else
+        sed -i "1 c\\$pok" $token
+    fi
+}
+
+
+menu2() {
+    banner
+    printf " \e[1;91m[\e[0m0\e[1;91m]\e[1;93m главная страница\n"
+    printf " \e[1;91m[\e[0m1\e[1;91m]\e[1;93m сменить токен\n"
+    printf " \e[1;91m[\e[0m2\e[1;91m]\e[1;93m удалить vk-video\n\n"
+
+    zaebal() {        
+        read -p $'\e[1;92mВыбери вариант: \e[0m\e[1;96m' pok
+            if [[ $pok == '0' ]]; then
+                menu
+            elif [[ $pok == '1' ]]; then
+                banner
+                vhod
+                menu2
+            elif [[ $pok == '2' ]]; then
+                delf() {
+                    read -p $'\n\e[1;92mудалить? (да/нет) \e[0m\e[1;96m' pok
+                    printf "\n"
+
+                    if [[ $pok == 'да' ]]; then
+                        cd
+                        rm -rf /data/data/com.termux/files/home/vk-video
+                    elif [[ $pok == 'нет' ]]; then
+                        menu2
+                    else
+                        printf "\n\e[0;93mможно выбрать только \e[1;96mда\e[0;93m и \e[1;96mнет\n\n"
+                        delf
+                    fi
+                }
+                delf
+            else
+                printf "\n\e[0;93mможно выбрать только \e[1;96mпункты\e[0;93m меню\n\n"
+                zaebal
+            fi
+    }
+    zaebal
+}
+
+
+
+menu() {
+    banner
+    printf "   "
+    printf "\e[1;91m[\e[0m1\e[1;91m] \e[1;93mзапуск "
+    printf "           \e[1;91m[\e[0m2\e[1;91m]\e[1;93m меню"
+    printf "\n"
+    
+    huy() {
+        printf "\n"
+        read -p $'\e[1;92mВыбери вариант: \e[0m\e[1;96m' pok
+        printf "\n"
+              
+        if [[ $pok == '1' ]]; then
+            cd
+            cd vk-video
+            python vk-video.py
+            printf "\e[1;91m                ОШИБКА\n"
+            printf "\e[0;93m скорее всего из-за одной из этих причин:\n"
+            printf "\e[0m ~ неправильный токен\n"
+            printf "\e[0m ~ нет интернета\n\n"
+            printf " \e[1;91m[\e[0m0\e[1;91m]\e[1;93m начальная страница"
+            printf " \e[1;91m[\e[0m1\e[1;91m]\e[1;93m сменить токен\n\n"
+
+            her() {
+                read -p $'\e[1;92mВыбери вариант: \e[0m\e[1;96m' pok
+                if [[ $pok == '0' ]]; then
+                    menu
+                elif [[ $pok == '1' ]]; then
+                    printf "\n"
+                    vhod
+                    menu
+                else
+                    printf "\n\e[0;93mможно выбрать только \e[1;96m0\e[0;93m и \e[1;96m1\n\n"
+                    her
+                fi
+            }
+            her
+        elif [[ $pok == '2' ]]; then
+            menu2
+        elif [[ $pok == '0' ]]; then
+            exit
+        else
+            printf "\e[0;93mможно выбрать только \e[1;96m1\e[0;93m и \e[1;96m2\n"
+            printf "\e[0;93mдля выхода \e[1;96m0\n"
+            huy
+        fi
+    }
+    huy
+}
+menu
