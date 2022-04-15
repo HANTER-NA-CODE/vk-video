@@ -28,3 +28,6 @@ USERBOT vk-video
 - скопируйте часть адресной строки от `access_token=` до `&expires_in`
 
      ![Alt-текст](https://sun9-39.userapi.com/impf/qf7ttaWiqX-JtP7vr3A7N_vk3GqN_-LO5WTEkQ/u_Oig4krD58.jpg?size=1179x56&quality=96&sign=f48c639fc76ab4f0e1aaa380db03cbbf&type=album)
+
+____
+###### я не смог разобраться с longPoll, поэтому получился говно код. ну так как он работает, я решил его залить
