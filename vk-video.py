@@ -45,14 +45,15 @@ while True:
     while zaebal['new_pts'] == zaebal['from_pts']:
         zaebal = vk.messages.getLongPollHistory(pts= pts)
     
-    penis = zaebal['messages']['items'][0]
-    if penis['from_id'] == pidaras:
-        for i in text:
-            i = i[:-1]
-            i1 = i.partition('||')[0]
-            i2 = i.partition('||')[2]
-            if penis['text'] == i1:
-                vk.messages.edit(peer_id= penis['peer_id'], message_id= penis['id'], attachment=i2, keep_forward_messages = 1)
+    if len(zaebal['messages']['items']) != 0:
+        penis = zaebal['messages']['items'][0]
+        if penis['from_id'] == pidaras:
+            for i in text:
+                i = i[:-1]
+                i1 = i.partition('||')[0]
+                i2 = i.partition('||')[2]
+                if penis['text'] == i1:
+                    vk.messages.edit(peer_id= penis['peer_id'], message_id= penis['id'], attachment=i2, keep_forward_messages = 1)
 
 
 
