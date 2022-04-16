@@ -8,8 +8,8 @@ printf "\e[1;94m   \ \/ /  \  |\e[1;95m_____|  \ \/ / | | (__| |  ___/  () | \n"
 printf "\e[1;94m    \__/_|\_\         \e[1;95m  \__/  |_|\___._|\____|\____/ \n"                                                                                                                                                                                                                                                                                    
 printf "\e[0m\n"
 
-printf "\n\e[1;95m  доступ к памяти\e[0m"
-termux-setup-storage
+
+
 
 printf "\n\e[1;95m  установка/обновление Python\e[0m\n"
 pkg install python
