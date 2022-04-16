@@ -1,7 +1,7 @@
-vk-video
+vk-video TERMUX
 ========
 ![текст](https://sun9-17.userapi.com/impf/SPK7kYWB2FQum7KnNj6TnOZYlSEXTkEKETARGw/4tce2zj0-N8.jpg?size=1500x500&quality=96&sign=867574fff1d8dc605726ce3f03f3158d&type=album)
-- отправка видео командой
+- отправка видео командами
 - дефолтные команды: `разрывная`, `пока`
 ____
 ## установка
