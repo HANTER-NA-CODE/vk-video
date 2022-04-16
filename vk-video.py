@@ -1,7 +1,6 @@
-import vk_api            #API vk.com
+import vk_api            #API vk.com
 from os import system    #команды для консоли
 
-#блокировка термукс в фоне
 system("termux-wake-lock")
 
 #ЗАСТАВКА
