@@ -34,7 +34,8 @@ menu2() {
     printf " \e[1;91m[\e[0m0\e[1;91m]\e[1;93m главная страница\n"
     printf " \e[1;91m[\e[0m1\e[1;91m]\e[1;93m сменить токен\n"
     printf " \e[1;91m[\e[0m2\e[1;91m]\e[1;93m команды\n"
-    printf " \e[1;91m[\e[0m3\e[1;91m]\e[1;93m удалить vk-video\n\n"
+    printf " \e[1;91m[\e[0m3\e[1;91m]\e[1;93m скачать команды с группы вк\n"
+    printf " \e[1;91m[\e[0m4\e[1;91m]\e[1;93m удалить vk-video\n\n"
 
     zaebal() {        
         read -p $'\e[1;92mВыбери вариант: \e[0m\e[1;96m' pok
@@ -49,6 +50,11 @@ menu2() {
                 vim text.txt
                 menu2
             elif [[ $pok == '3' ]]; then
+                printf "\e[0m\n"
+                cd; cd vk-video
+                python download.py
+                menu2
+            elif [[ $pok == '4' ]]; then
                 delf() {
                     read -p $'\n\e[1;92mудалить? (да/нет) \e[0m\e[1;96m' pok
                     printf "\n"
@@ -88,28 +94,20 @@ menu() {
         printf "\n"
               
         if [[ $pok == '1' ]]; then
-            cd
-            cd vk-video
-            python vk-video.py
+            ter() {
             printf "\e[1;91m                ОШИБКА\n"
             printf "\e[0;93m скорее всего из-за одной из этих причин:\n"
             printf "\e[0m ~ неправильный токен\n"
             printf "\e[0m ~ нет интернета\n\n"
-            printf " \e[1;91m[\e[0m0\e[1;91m]\e[1;93m начальная страница"
-            printf " \e[1;91m[\e[0m1\e[1;91m]\e[1;93m сменить токен\n\n"
-
+            printf " перезапуск через 2.5 секунд\n"
+            }
             her() {
-                read -p $'\e[1;92mВыбери вариант: \e[0m\e[1;96m' pok
-                if [[ $pok == '0' ]]; then
-                    menu
-                elif [[ $pok == '1' ]]; then
-                    printf "\n"
-                    vhod
-                    menu
-                else
-                    printf "\n\e[0;93mможно выбрать только \e[1;96m0\e[0;93m и \e[1;96m1\n\n"
-                    her
-                fi
+            cd
+            cd vk-video
+                python vk-video.py
+                ter
+                sleep 2.5
+                her
             }
             her
         elif [[ $pok == '2' ]]; then

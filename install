@@ -20,6 +20,9 @@ pkg install openssl
 printf "\n\e[1;95m  установка/обновление vk_api\e[0m\n"
 pip install vk_api
 
+printf "\n\e[1;95m  установка/обновление wget\e[0m\n"
+pip install wget
+
 printf "\n\e[1;95m  копирование vk-video в корневую папку\e[0m\n"
 cp vk-video /data/data/com.termux/files/usr/bin
 cd /data/data/com.termux/files/usr/bin
