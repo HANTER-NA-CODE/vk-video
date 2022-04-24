@@ -34,7 +34,7 @@ menu2() {
     printf " \e[1;91m[\e[0m0\e[1;91m]\e[1;93m главная страница\n"
     printf " \e[1;91m[\e[0m1\e[1;91m]\e[1;93m сменить токен\n"
     printf " \e[1;91m[\e[0m2\e[1;91m]\e[1;93m команды\n"
-    printf " \e[1;91m[\e[0m3\e[1;91m]\e[1;93m скачать команды с группы вк\n"
+    printf " \e[1;91m[\e[0m3\e[1;91m]\e[1;93m спарсить шаблоны с группы вк\n"
     printf " \e[1;91m[\e[0m4\e[1;91m]\e[1;93m удалить vk-video\n\n"
 
     zaebal() {        
@@ -52,7 +52,7 @@ menu2() {
             elif [[ $pok == '3' ]]; then
                 printf "\e[0m\n"
                 cd; cd vk-video
-                python download.py
+                python parser.py
                 menu2
             elif [[ $pok == '4' ]]; then
                 delf() {
