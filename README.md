@@ -1,6 +1,6 @@
 vk-video TERMUX
 ========
-![текст](https://sun9-17.userapi.com/impf/SPK7kYWB2FQum7KnNj6TnOZYlSEXTkEKETARGw/4tce2zj0-N8.jpg?size=1500x500&quality=96&sign=867574fff1d8dc605726ce3f03f3158d&type=album)
+![текст](https://sun9-82.userapi.com/s/v1/if2/oJ68gg3NEQCB0OUXaiB1TuZjoXMrFVQ0iUAULZX0RP4NN6sDjog1hyXkncG-_y7u-xAYswzIuimHEZ6fOgyZpHE3.jpg?size=1196x400&quality=96&type=album)
 - отправка видео командами
 - дефолтные команды: `разрывная`, `пока`
 - общий шаблон - [группа вк](https://vk.com/vk.video_userbot)
