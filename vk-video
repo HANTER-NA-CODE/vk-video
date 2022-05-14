@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd
+cd vk-video
+python vk-video.py
+
+cd
