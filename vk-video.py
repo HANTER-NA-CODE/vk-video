@@ -26,7 +26,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS shab(message TEXT, attachment TEXT)"""
 '''**********************************************************   БАННЕР   **************************************************************'''
 
 def banner():
-    terminal("cls")
+    terminal("clear")
     print("\033[34m        _             \033[35m         _      _              "); sleep(0.02)
     print("\033[34m       | | __         \033[35m        (_)    | |             "); sleep(0.02)
     print("\033[34m  __   |__/ /         \033[35m__    __ _  ___| | ____  ____  "); sleep(0.02)
